@@ -1,0 +1,76 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model BlogPostPictureModel
+
+@{
+
+    var themeCssPath = await themeHelper.GetThemeCssPathAsync(PluginDefaults.SYSTEM_NAME);
+    var themeJsPath = await themeHelper.GetThemeJsPathAsync(PluginDefaults.SYSTEM_NAME);
+
+    Layout = "";
+    NopHtml.AddCssFileParts($"{themeCssPath}/owl.carousel.css");
+    NopHtml.AddCssFileParts($"{themeCssPath}/widget.css");
+    if ((await workContext.GetWorkingLanguageAsync()).Rtl)
+    {
+        NopHtml.AddScriptParts(Nop.Web.Framework.UI.ResourceLocation.Footer, $"{themeJsPath}/owl.carousel.min.rtl.js");
+        NopHtml.AddCssFileParts($"{themeCssPath}/widget.rtl.css");
+    }
+    else
+    {
+        NopHtml.AddScriptParts(Nop.Web.Framework.UI.ResourceLocation.Footer, $"{themeJsPath}/owl.carousel.min.js");
+    }
+    var isMobileDevice = userAgentHelper.IsMobileDevice();
+}
+@if (Model != null)
+{
+    <div class="row enhanced-blog-banner">
+        @if (Model.DesktopPictureId > 0 && !isMobileDevice)
+        {
+            <div class="enhanced-blog-desktop">
+                <img src="@Model.Link1" alt="@Model.AltText1" height="200" width="400" />
+            </div>
+        }
+        else if (isMobileDevice && Model.MobilePictureId > 0)
+        {
+            <div class="enhanced-blog-mobile">
+                <img src="@Model.Link2" alt="@Model.AltText2" height="200" width="400" />
+            </div>
+        }
+        else if (isMobileDevice)
+        {
+            <div class="enhanced-blog-desktop">
+                <img src="@Model.Link1" alt="@Model.AltText1" height="200" width="400" />
+            </div>
+        }
+    </div>
+}

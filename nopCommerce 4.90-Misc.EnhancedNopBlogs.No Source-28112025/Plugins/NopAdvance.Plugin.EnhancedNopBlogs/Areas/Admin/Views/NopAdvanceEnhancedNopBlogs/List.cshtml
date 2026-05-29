@@ -1,0 +1,229 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model BlogCollectionSearchModel
+
+@{
+    Layout = "_AdminLayout";
+    //page title
+    ViewBag.PageTitle = T(LocaleResourceDefaults.BLOG_COLLECTION_MENU_TITLE).Text;
+
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName(SiteMapDefaults.BLOGCOLLECTION_MENU_SYSTEM_NAME);
+
+    const string hideSearchBlockAttributeName = "BlogCollectionListPage.HideSearchBlock";
+    var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T(LocaleResourceDefaults.BLOG_COLLECTION_MENU_TITLE)
+    </h1>
+    <div class="float-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fa fa-plus-square"></i>
+            @T("Admin.Common.AddNew")
+        </a>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <div class="cards-group">
+                <div class="card card-default card-search">
+                    <div class="card-body">
+                        <div class="row search-row @(!hideSearchBlock ? "opened" : "")" data-hideAttribute="@hideSearchBlockAttributeName">
+                            <div class="search-text">@T("Admin.Common.Search")</div>
+                            <div class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></div>
+                            <div class="icon-collapse"><i class="far fa-angle-@(!hideSearchBlock ? "up" : "down")" aria-hidden="true"></i></div>
+                        </div>
+
+                        <div class="search-body @(hideSearchBlock ? "closed" : "")">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchTitle" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="SearchTitle" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchBlogTitle" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="SearchBlogTitle" />
+                                        </div>
+                                    </div>
+                                    @if (Model.AvailableWidgetZoneNames != null && Model.AvailableWidgetZoneNames.Count != 0)
+                                    {
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchWidgetZone" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-select asp-for="SearchWidgetZone" asp-items="Model.AvailableWidgetZoneNames" />
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchPublishedId" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-select asp-for="SearchPublishedId" asp-items="Model.AvailablePublishedOptions" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchStartDate" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="SearchStartDate" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchEndDate" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="SearchEndDate" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchStoreId" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-select asp-for="SearchStoreId" asp-items="Model.AvailableStores" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="DisplayOrder" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="DisplayOrder" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-center col-12">
+                                    <button type="button" id="search-slider" class="btn btn-primary btn-search">
+                                        <i class="fa fa-search"></i>
+                                        @T("Admin.Common.Search")
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default" id="group-Manufacturers">
+                    <div class="card-body">
+                        @await Html.PartialAsync("Table", new DataTablesModel
+                   {
+                       Name = "blogs-grid",
+                       UrlRead = new DataUrl("List", "NopAdvanceEnhancedNopBlogs"),
+                       Length = Model.PageSize,
+                       LengthMenu = Model.AvailablePageSizes,
+                       SearchButtonId = "search-slider",
+                       Filters = new List<FilterParameter>
+                        {
+                        new FilterParameter(nameof(Model.SearchBlogTitle)),
+                        new FilterParameter(nameof(Model.SearchTitle)),
+                        new FilterParameter(nameof(Model.SearchWidgetZone)),
+                        new FilterParameter(nameof(Model.SearchPublishedId)),
+                        new FilterParameter(nameof(Model.DisplayOrder)),
+                        new FilterParameter(nameof(Model.SearchStartDate)),
+                        new FilterParameter(nameof(Model.SearchEndDate)),
+                        new FilterParameter(nameof(Model.SearchStoreId))
+                        },
+                       ColumnCollection = new List<ColumnProperty>
+                        {
+                        new ColumnProperty(nameof(BlogCollectionModel.Name))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_TITLE).Text,
+                        Width = "150",
+                        },
+                        new ColumnProperty(nameof(BlogCollectionModel.WidgetZone))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_WIDGETZONES).Text,
+                        Width = "150",
+                        Encode=false
+                        },
+                        new ColumnProperty(nameof(BlogCollectionModel.StartDateUtc))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_STARTDATE).Text,
+                        Width = "100",
+                        Render = new RenderDate()
+                        },
+                        new ColumnProperty(nameof(BlogCollectionModel.EndDateUtc))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_ENDDATE).Text,
+                        Width = "100",
+                        Render = new RenderDate()
+                        },
+                         new ColumnProperty(nameof(BlogCollectionModel.DisplayOrder))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_DISPLAY_ORDER).Text,
+                        Width = "100",
+                        ClassName = NopColumnClassDefaults.CenterAll,
+                        Encode=false
+                        },
+                        new ColumnProperty(nameof(BlogCollectionModel.Published))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_PUBLISHED).Text,
+                        Width = "100",
+                        ClassName = NopColumnClassDefaults.CenterAll,
+                        Render = new RenderBoolean()
+                        },
+                        new ColumnProperty(nameof(BlogCollectionModel.Id))
+                        {
+                        Title = T("Admin.Common.Edit").Text,
+                        Width = "100",
+                        ClassName =  NopColumnClassDefaults.Button,
+                        Render = new RenderButtonEdit(new DataUrl("Edit"))
+                        }
+                        }
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

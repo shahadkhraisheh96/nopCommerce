@@ -1,0 +1,14 @@
+﻿{
+  "Group": "NopAdvance",
+  "FriendlyName": "Enhanced nop blogs",
+  "SystemName": "NopAdvance.Plugin.EnhancedNopBlogs",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.90" ],
+  "Author": "NopAdvance team",
+  "DisplayOrder": 1,
+  "FileName": "NopAdvance.Plugin.Widgets.EnhancedNopBlogs.dll",
+  "Description": "Advanced blog solution offering grid/slider views, SEO optimization, and product integration.",
+  "DependsOnSystemNames": [ "NopAdvance.Core" ],
+  "ProductUrl": "https://store.nopadvance.com/nopcommerce-plugins/enhanced-nopcommerce-advance-blogs-plugin/",
+  "HelpUrl": "https://store.nopadvance.com/docs/configure-nopcommerce-advanced-blog-management-plugin"
+}

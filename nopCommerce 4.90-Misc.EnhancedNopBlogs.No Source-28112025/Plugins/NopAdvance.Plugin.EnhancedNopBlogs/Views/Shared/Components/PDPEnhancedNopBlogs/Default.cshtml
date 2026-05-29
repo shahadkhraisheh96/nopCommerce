@@ -1,0 +1,130 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model List<ProductDetailsBlogViewModel>
+
+@{
+
+    var themeCssPath = await themeHelper.GetThemeCssPathAsync(PluginDefaults.SYSTEM_NAME);
+    var themeJsPath = await themeHelper.GetThemeJsPathAsync(PluginDefaults.SYSTEM_NAME);
+
+    Layout = "";
+    NopHtml.AddCssFileParts($"{themeCssPath}/owl.carousel.css");
+    NopHtml.AddCssFileParts($"{themeCssPath}/widget.css");
+    if ((await workContext.GetWorkingLanguageAsync()).Rtl)
+    {
+        NopHtml.AddScriptParts(Nop.Web.Framework.UI.ResourceLocation.Footer, $"{themeJsPath}/owl.carousel.min.rtl.js");
+        NopHtml.AddCssFileParts($"{themeCssPath}/widget.rtl.css");
+    }
+    else
+    {
+        NopHtml.AddScriptParts(Nop.Web.Framework.UI.ResourceLocation.Footer, $"{themeJsPath}/owl.carousel.min.js");
+    }
+
+    var isMobileDevice = userAgentHelper.IsMobileDevice();
+}
+
+<div class="slider enhanced-nop-blog">
+    @if (Model.Count() > 0)
+    {
+        <div class="blog-grid-container @(true ? "" : "not-carousel")">
+            <div class="bg-outer-color"></div>
+            <div class="title">
+                <strong>@T(LocaleResourceDefaults.PUBLIC_STORE_PDP_BLOG_TITLE)</strong>
+            </div>
+            <div id="PDPSlider" class="blog-grid blog-grid-section @(true ? "owl-carousel blog-slider" : "not-carousel")">
+                @foreach (var blog in Model)
+                {
+                    <div class="post">
+                        @if (blog.BlogPicture != null)
+                        {
+                            @if (blog.BlogPicture.DesktopPictureId > 0 && !isMobileDevice)
+                            {
+                                <a class="blog-overview-picture" href="@Url.RouteUrl("BlogPost", new { SeName = blog.BlogPost.SeName })">
+                                    <img src="@blog.BlogPicture.Link1" alt="@blog.BlogPicture.AltText1" title="@blog.BlogPicture.Text1" height="100" width="400" />
+                                </a>
+                            }
+                            else if (isMobileDevice && blog.BlogPicture.MobilePictureId > 0)
+                            {
+                                <a class="blog-overview-picture" href="@Url.RouteUrl("BlogPost", new { SeName = blog.BlogPost.SeName })">
+                                    <img src="@blog.BlogPicture.Link2" alt="@blog.BlogPicture.AltText2" title="@blog.BlogPicture.Text2" height="100" width="400" />
+                                </a>
+                            }
+                            else if (isMobileDevice)
+                            {
+                                <a class="blog-overview-picture" href="@Url.RouteUrl("BlogPost", new { SeName = blog.BlogPost.SeName })">
+                                    <img src="@blog.BlogPicture.Link1" alt="@blog.BlogPicture.AltText1" title="@blog.BlogPicture.Text1" height="100" width="400" />
+                                </a>
+                            }
+                        }
+                        <div class="post-head">
+                            <a class="post-title" href="@Url.RouteUrl("BlogPost", new {SeName = blog.BlogPost.SeName})">@blog.BlogPost.Title</a>
+                        </div>
+
+                        <div class="post-body">
+                            @Html.Raw(blog.BlogPost.BodyOverview)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+         <script type="text/javascript" asp-location="Footer">
+                $(document).ready(function () {
+                    $('#PDPSlider').owlCarousel({
+                        loop: false,
+                        margin: 25,
+                        dots: true,
+                        nav: false,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        autoplayHoverPause: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            481: {
+
+                                items: 2
+                            },
+                            769: {
+                                items: 2
+                            },
+                            1000: {
+                                items: 2
+                            }
+                        }
+                    })
+                });
+            </script>
+        
+    }
+</div>

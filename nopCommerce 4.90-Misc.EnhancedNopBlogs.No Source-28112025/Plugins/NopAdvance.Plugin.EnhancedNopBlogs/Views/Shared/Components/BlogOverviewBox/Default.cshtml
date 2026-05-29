@@ -1,0 +1,73 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model BlogPostPictureModel
+
+@{
+
+    var themeCssPath = await themeHelper.GetThemeCssPathAsync(PluginDefaults.SYSTEM_NAME);
+
+    Layout = "";
+    NopHtml.AddCssFileParts($"{themeCssPath}/widget.css");
+    if ((await workContext.GetWorkingLanguageAsync()).Rtl)
+    {
+        NopHtml.AddCssFileParts($"{themeCssPath}/widget.rtl.css");
+    }
+
+    var isMobileDevice = userAgentHelper.IsMobileDevice();
+}
+@if (Model != null)
+{
+    <div class="enhanced-blog-post-banner">
+        @if (Model.DesktopPictureId > 0 && !isMobileDevice)
+        {
+            <a class="blog-overview-picture" href="@Url.RouteUrl("BlogPost", new { SeName = Model.SeName })">
+                <img src="@Model.Link1" alt="@Model.AltText1" height="100" width="400" />
+            </a>
+        }
+        else if (isMobileDevice && Model.MobilePictureId > 0)
+        {
+            <a class="blog-overview-mobile" href="@Url.RouteUrl("BlogPost", new { SeName = Model.SeName })">
+                <img src="@Model.Link2" alt="@Model.AltText2" height="100" width="400" />
+            </a>
+        }
+        else if (isMobileDevice)
+        {
+            @if (Model.DesktopPictureId > 0)
+            {
+                <a class="blog-overview-picture" href="@Url.RouteUrl("BlogPost", new { SeName = Model.SeName })">
+                    <img src="@Model.Link1" height="100" width="400" />
+                </a>
+            }
+        }
+    </div>
+}

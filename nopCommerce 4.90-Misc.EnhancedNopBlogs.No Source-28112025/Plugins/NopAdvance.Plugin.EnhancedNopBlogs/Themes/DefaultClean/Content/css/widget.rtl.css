@@ -1,0 +1,4 @@
+﻿.enhanced-nop-blog .owl-nav .owl-prev{right:0;left:auto;}
+.enhanced-nop-blog .owl-nav .owl-next{right:auto;left:0;}
+.enhanced-nop-blog .owl-nav .owl-next:after,
+.enhanced-nop-blog .owl-nav .owl-prev:after{transform: rotate( 180deg );}

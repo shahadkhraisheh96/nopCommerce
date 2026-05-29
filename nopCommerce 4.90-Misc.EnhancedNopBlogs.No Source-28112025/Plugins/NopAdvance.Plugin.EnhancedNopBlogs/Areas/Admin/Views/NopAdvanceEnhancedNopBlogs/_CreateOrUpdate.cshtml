@@ -1,0 +1,58 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model BlogCollectionModel
+
+@{
+    const string hideInfoBlockAttributeName = "BlogWidget.HideInfoBlock";
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideInfoBlockAttributeName);
+
+    const string hideDisplayBlockAttributeName = "BlogWidget.Display";
+    var hideDisplayBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideDisplayBlockAttributeName, defaultValue: true);
+
+    const string hideBlogsBlockAttributeName = "BlogWidget.Blogs";
+    var hideBlogsBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideBlogsBlockAttributeName, defaultValue: true);
+}
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" type="hidden" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="blog-widget-cards">
+                <nop-card asp-name="tab-info" asp-icon="fa fa-info" asp-title="@T(LocaleResourceDefaults.BLOG_WIDGET_PANEL_TITLE_INFO)" asp-hide-block-attribute-name="@hideDisplayBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync($"_CreateOrUpdate.Info", Model)</nop-card>
+                <nop-card asp-name="tab-blogs" asp-icon="fa fa-blog" asp-title="@T(LocaleResourceDefaults.BLOG_WIDGET_PANEL_TITLE_BLOGS)" asp-hide-block-attribute-name="@hideBlogsBlockAttributeName" asp-hide="@hideBlogsBlock" asp-advanced="false">@await Html.PartialAsync($"_CreateOrUpdate.Blogs", Model)</nop-card>
+            </nop-cards>
+        </div>
+    </div>
+</section>

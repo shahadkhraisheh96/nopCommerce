@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Plugins",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Themes",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Themes\\DefaultClean",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Themes\\DefaultClean\\Content",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Views",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Views\\Shared",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Views\\Shared\\Components",
+    "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Views\\Shared\\Components\\BlogContentShowcase"
+  ],
+  "SelectedNode": "\\Plugins\\NopAdvance.Plugin.EnhancedNopBlogs\\Views\\Shared\\Components\\BlogContentShowcase\\Default.cshtml",
+  "PreviewInSolutionExplorer": false
+}

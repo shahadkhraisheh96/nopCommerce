@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+	
+    <!-- Configuration Page-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.EnhancedNopBlog">
+        <Value>Enhanced nop-blogs</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.BlogCollection">
+        <Value>Collections</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Configure.Panel.Configure">
+        <Value>Configure</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Configure.Fields.ProductDetailsPageWidgetZone">
+        <Value>Product details page widget zone</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Configure.Fields.ProductDetailsPageWidgetZone.Hint">
+        <Value>Select a widget zone to display related blog(s) on a product details page.</Value>
+    </LocaleResource>
+	
+    <!-- Blog Colleaction Page-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchTitle">
+        <Value>Name</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchTitle.Hint">
+        <Value>A collection name.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchBlogTitle">
+        <Value>Blog title</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchBlogTitle.Hint">
+        <Value>Search by a blog title.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchPublishedId">
+        <Value>Published</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchPublishedId.Hint">
+        <Value>Search by a "Published" property.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchStoreId">
+        <Value>Store</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchStoreId.Hint">
+        <Value>Search by a specific store.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchStartDate">
+        <Value>Start date</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchStartDate.Hint">
+        <Value>The start date for the search.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchEndDate">
+        <Value>End date</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchEndDate.Hint">
+        <Value>The end date for the search.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchWidgetZone">
+        <Value>Widget zone</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchWidgetZone.Hint">
+        <Value>Search by a specific widget zone.</Value>
+    </LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchDisplayOrder">
+		<Value>Display order</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.SearchDisplayOrder.Hint">
+		<Value>Search by a display order.</Value>
+	</LocaleResource>
+	
+    <!-- Add / Edit Blog Colleaction Page-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Panel.Title.Info">
+        <Value>Info</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Panel.Title.Display">
+        <Value>Display</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Panel.Title.Blogs">
+        <Value>Blogs</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Add">
+        <Value>Add a new blog collection</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Edit">
+        <Value>Edit blog collection details</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BackToList">
+        <Value>back to blog collection list</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.AddNew">
+        <Value>Add a new blog</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Title">
+        <Value>Name</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Title.Hint">
+        <Value>The name for blog collection.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Title.Required">
+        <Value>Name is required.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.StartDate">
+        <Value>Start date</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.StartDate.Hint">
+        <Value>The start of the enhanced nop blog period in Coordinated Universal Time (UTC).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.EndDate">
+        <Value>End date</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.EndDate.Hint">
+        <Value>The end of the enhanced nop blog period in Coordinated Universal Time (UTC).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.WidgetZones">
+        <Value>Widget zone</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.WidgetZones.Hint">
+        <Value>Choose a widget zone to display the blog collection on the home page.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.DisplayOrder">
+        <Value>Display order</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.DisplayOrder.Hint">
+        <Value>The display order of the enhanced nop blog. 1 represents the top of the list.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Published">
+        <Value>Published</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Published.Hint">
+        <Value>Check to publish this enhanced nop blog (visible in store). Uncheck to unpublish (enhanced nop blog not available in store).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.SelectedStoreIds">
+        <Value>Limited to stores</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.SelectedStoreIds.Hint">
+        <Value>Option to limit this attribute to a certain store. If you have multiple stores, choose one or several from the list. If you don't use this option just leave this field empty.In order to use this functionality, you have to disable the following setting: Configuration > Catalog settings > Ignore "limit per store" rules (sitewide).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.SelectedCustomerRoleIds">
+        <Value>Customer roles</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.SelectedCustomerRoleIds.Hint">
+        <Value>Choose one or several customer roles i.e. administrators, vendors, guests, who will be able to see this enhanced nop blog. If you don't need this option just leave this field empty. In order to use this functionality, you have to disable the following setting: Configuration > Settings > Catalog > Ignore ACL rules (sitewide).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Slider">
+        <Value>Slider</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Slider.Hint">
+        <Value>Check this option to display a blog slider on the home page.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.ContinuousLoop">
+        <Value>Continuous loop</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.ContinuousLoop.Hint">
+        <Value>Check this option to make the slider loop continuously without stopping.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Autoplay">
+        <Value>Autoplay</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Autoplay.Hint">
+        <Value>Check this option to automatically play the slider without user interaction.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.NavigationArrows">
+        <Value>Navigation arrows</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.NavigationArrows.Hint">
+        <Value>Check this option to show navigation arrows on both sides of the slider.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.NavigationDots">
+        <Value>Navigation dots</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.NavigationDots.Hint">
+        <Value>Check this option to display navigation dots at the bottom of the slider.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Navigation">
+        <Value>Navigation</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.Fields.Navigation.Hint">
+        <Value>Check this option to allow navigation controls for the slider.</Value>
+    </LocaleResource>+
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.ContentManagement.Blog.BlogPosts.Fields.Title">
+        <Value>Blog title</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.ContentManagement.Blog.BlogPosts.Fields.Title.Hint">
+        <Value>Search by a blog title.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.Message">
+        <Value>You need to save the enhanced nop blog before you can edit this tab.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlog.GridFields.Stores">
+        <Value>Stores</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.GridFields.BlogTitle">
+        <Value>Blog title</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.GridFields.DisplayOrder">
+        <Value>Display order</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.Added">
+        <Value>The new blog collection has been added successfully.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.Updated">
+        <Value>The blog collection has been updated successfully.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.EnhancedNopBlogMapping.Deleted">
+        <Value>The blog collection has been deleted successfully.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Exception.NoBlogFound">
+        <Value>No blog found with the specified id</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Exception.NoBlogWidgetFound">
+        <Value>No enhanced nop blog found with the specified id</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Exception.NoWidgetMappingFound">
+        <Value>No widget content mapping found with the specified id</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Exception.NoBlogPostProductMappingFound">
+        <Value>No blog post product mapping found with the specified id</Value>
+    </LocaleResource>
+	
+    <!-- Desktop banner section-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.DesktopPictureId">
+        <Value>Desktop banner</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.DesktopPictureId.Hint">
+        <Value>The desktop banner picture.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText1">
+        <Value>Image alternate text</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText1.Hint">
+        <Value>Enter alternate text that will be added to image.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link1">
+        <Value>URL</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link1.Hint">
+        <Value>Enter URL. Leave empty if you don't want this picture to be clickable.</Value>
+    </LocaleResource>
+	
+    <!-- Mobile banner section -->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.MobilePictureId">
+        <Value>Mobile banner</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.MobilePictureId.Hint">
+        <Value>The mobile banner picture.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText2">
+        <Value>Image alternate text</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText2.Hint">
+        <Value>Enter alternate text that will be added to image.</Value>
+    </LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Field.Attachment.DownloadId">
+		<Value>File attachment</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Field.Attachment.DownloadId.Hint">
+		<Value>You can attachment file using URL or uploading from the computer.</Value>
+	</LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link2">
+        <Value>URL</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link2.Hint">
+        <Value>Enter URL. Leave empty if you don't want this picture to be clickable.</Value>
+    </LocaleResource>
+	
+    <!-- Body Overview Picture section-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText3">
+        <Value>Image alternate text</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link3">
+        <Value>URL</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.Link3.Hint">
+        <Value>Enter URL. Leave empty if you don't want this picture to be clickable.</Value>
+    </LocaleResource>
+	
+    <!--Config section-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.SelectedCustomerRoleIds">
+        <Value>Customer roles</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.SelectedCustomerRoleIds.Hint">
+        <Value>Choose one or several customer roles i.e. administrators, vendors, guests, who will be able to see this blog. If you don't need this option just leave this field empty. In order to use this functionality, you have to disable the following setting: Configuration > Settings > Catalog > Ignore ACL rules (sitewide).</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.DesktopBanner.Section">
+        <Value>Desktop banner</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.MobileBanner.Section">
+        <Value>Mobile banner</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BodyOverviewPicture.Section">
+        <Value>Blog overview picture</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Config.Section">
+        <Value>Configure</Value>
+    </LocaleResource>
+	
+    <!--General-->
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogBanner.Field.AltText3.Hint">
+        <Value>Enter alternate text that will be added to image.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPost.SaveBeforeEdit">
+        <Value>You need to save the blog post before edit products.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPostProductMapping.Title.AddNew">
+        <Value>Add a new blog</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPostProductMapping.RelatedProducts.Hint">
+        <Value>The products option provides the opportunity to advertise products that are related to this blog to your visitors. These products are displayed on the blog details page.You can choose to display products added from this section in a widget zone you select under the config section of this page or you can also insert these products between blog content using the token provided below.</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPostProductMapping.ProducToken.Hint">
+        <Value>(Place this token anywhere in your blog content to display a product slider or grid based on plugin configuration settings.)</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPostProductMapping.ProducTokenNote.Hint">
+        <Value>Note: You can also display custom product grid or slider inside your blog content without adding in the below grid. In order to do that you need to prepare a product token and place product id's. For example, %product_ids:1,2,3,4%</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Public.PDP.Title">
+        <Value>Blogs</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPost.Panel.Title.Banner">
+        <Value>Display</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Public.BlogPost.Title.Attachment">
+        <Value>Attachment:</Value>
+    </LocaleResource>
+    <LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogPost.Panel.Title.Product">
+        <Value>Blogs</Value>
+    </LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.Body">
+		<Value>Description</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.Body.Hint">
+		<Value>Search blog post(s) by specific description text.</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.IncludeInSitemap">
+		<Value>Include in sitemap</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.IncludeInSitemap.Hint">
+		<Value>Filter blog posts that appear in the sitemap.</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.AllowComments">
+		<Value>Allow comments</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.BlogContent.List.AllowComments.Hint">
+		<Value>Filter blog posts that appear in the allow comments.</Value>
+	</LocaleResource>
+	
+	<!--Token-->
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Tokens.Title">
+		<Value>Tokens</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Tokens.ProductTokens">
+		<Value>Product tokens</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Tokens.ProductTokens.Note">
+		<Value><![CDATA[You can display products anywhere in a <strong>grid or slider</strong> on the blog post details page which is a great opportunity to advertise products to your visitors. Default <strong>display mode</strong> is grid if not provided or in case of typo.]]></Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Tokens.ProductTokens.Note2">
+		<Value><![CDATA[Put a token anywhere in the blog post content with product id's to display products in a slider or grid.", and place this note to the right of the "Token format: product_ids:1,2,3|slider/grid" text instead of below it.]]></Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAdvance.Plugin.EnhancedNopBlogs.Admin.Tokens.ProductTokens.Note3">
+		<Value><![CDATA[<strong>Example:</strong> %product_ids:1,2,3|grid% will replace the token and product id's with the product boxes in a grid when rendering the current blog post page.]]></Value>
+	</LocaleResource>
+</Language>

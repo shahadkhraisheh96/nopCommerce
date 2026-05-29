@@ -1,0 +1,85 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model ConfigurationModel
+
+@{
+    Layout = genericHelper.GetPluginConfigureLayout();
+    ViewBag.SystemName = PluginDefaults.SYSTEM_NAME;
+    ViewBag.LicenseStatus = Model.LicenseStatus;
+
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName(SiteMapDefaults.CONFIGURE_MENU_SYSTEM_NAME);
+}
+
+@{
+    const string hideConfigureBlockAttributeName = "enhancenopblog.HideConfigureBlock";
+    var customer = await workContext.GetCurrentCustomerAsync();
+    var hideConfigureBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideConfigureBlockAttributeName);
+}
+
+@await Component.InvokeAsync(typeof(StoreScopeConfigurationViewComponent))
+<form asp-controller="NopAdvanceEnhancedNopBlogs" asp-action="Configure" method="post">
+    <div class="form-horizontal">
+        <nop-cards id="enhancedNopBlogCards">
+            <nop-card asp-name="enhancenopblog-configure" asp-icon="fas fa-cogs" asp-title="@T(LocaleResourceDefaults.CONFIGURE_PANEL_CONFIGURE)" asp-hide-block-attribute-name="@hideConfigureBlockAttributeName" asp-hide="@hideConfigureBlock" asp-advanced="false">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-override-store-checkbox asp-for="Enabled_OverrideForStore" asp-input="Enabled" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                            <nop-label asp-for="Enabled" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="Enabled" />
+                            <span asp-validation-for="Enabled"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-override-store-checkbox asp-for="ProductDetailsPageWidgetZone_OverrideForStore" asp-input="ProductDetailsPageWidgetZone" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                            <nop-label asp-for="ProductDetailsPageWidgetZone" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-select asp-for="ProductDetailsPageWidgetZone" asp-items="@Model.AvailableWidgetZones" />
+                            <span asp-validation-for="ProductDetailsPageWidgetZone"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9 offset-md-3">
+                            <input type="submit" name="save" class="btn btn-primary" value="@T("Admin.Common.Save")" />
+                        </div>
+                    </div>
+                </div>
+            </nop-card>
+        </nop-cards>
+    </div>
+</form>

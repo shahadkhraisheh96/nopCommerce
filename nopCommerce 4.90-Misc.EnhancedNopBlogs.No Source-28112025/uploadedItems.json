@@ -1,0 +1,14 @@
+[
+  {
+    "Type": "Plugin",
+    "SupportedVersion": "4.90",
+    "SystemName": "NopAdvance.Core",
+    "DirectoryPath": "Plugins/NopAdvance.Core/"
+  },
+  {
+    "Type": "Plugin",
+    "SupportedVersion": "4.90",
+    "SystemName": "NopAdvance.Plugin.EnhancedNopBlogs",
+    "DirectoryPath": "Plugins/NopAdvance.Plugin.EnhancedNopBlogs/"
+  }
+]

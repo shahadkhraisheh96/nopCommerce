@@ -1,0 +1,122 @@
+@*
+    // ***   ** ****** ****** ****** ******* **     ** ****** ***   ** **** ****
+    // ****  ** **  ** **  ** **  **  **  **  **   **  **  ** ****  ** *    *
+    // ** ** ** **  ** ****** ******  **  **   ** **   ****** ** ** ** *    ***
+    // **  **** **  ** **     **  **  **  **    ***    **  ** **  **** *    *
+    // **   *** ****** **     **  ** *******     *     **  ** **   *** **** ****
+    // **************************************************************************
+    // *                                                                         *
+    // *    Enhanced nop blogs Plugin by NopAdvance team                         *
+    // *    Copyright (c) NopAdvance LLP. All Rights Reserved.                   *
+    // *                                                                         *
+    // **************************************************************************
+    // *                                                                         *
+    // *    This software is licensed for use under the terms accepted during    *
+    // *    the purchase of this product. A non-exclusive, non-transferable      *
+    // *    right is granted to use this product on the website for which it was *
+    // *    licensed.                                                            *
+    // *                                                                         *
+    // *    Companies purchasing this product for their customers are permitted, *
+    // *    provided the use complies with the terms outlined in the EULA:       *
+    // *    https://store.nopadvance.com/eula.                                   *
+    // *                                                                         *
+    // *    You may not reverse engineer, decompile, modify, or distribute this  *
+    // *    software without explicit permission from NopAdvance LLP. Any        *
+    // *    violation will result in the termination of your license and may     *
+    // *    lead to legal action.                                                *
+    // *                                                                         *
+    // **************************************************************************
+    // *    Contact: contact@nopadvance.com                                      *
+    // *    Website: https://nopadvance.com                                      *
+    // **************************************************************************
+*@
+@model BlogCollectionModel
+
+<div class="card-body">
+    @if (Model.Id > 0)
+    {
+        <div class="card card-default" id="group-blogs">
+            <div class="card-body">
+                @await Html.PartialAsync("Table", new DataTablesModel
+               {
+                   Name = "blogs-mapping-grid",
+                   UrlRead = new DataUrl("BlogMappingList", "NopAdvanceEnhancedNopBlogs", new Microsoft.AspNetCore.Routing.RouteValueDictionary { [nameof(Model.BlogPostMappingSearchModel.BlogWidgetId)] = Model.BlogPostMappingSearchModel.BlogWidgetId }),
+                   UrlDelete = new DataUrl("DeleteBlogMapping", "NopAdvanceEnhancedNopBlogs", null),
+                   UrlUpdate = new DataUrl("UpdateBlogMapping", "NopAdvanceEnhancedNopBlogs", null),
+                   Length = Model.BlogPostMappingSearchModel.PageSize,
+                   LengthMenu = Model.BlogPostMappingSearchModel.AvailablePageSizes,
+                   ColumnCollection = new List<ColumnProperty>
+                   {
+                        new ColumnProperty(nameof(BlogPostMappingModel.BlogTitle))
+                        {
+                            Title = T(LocaleResourceDefaults.BLOG_WIDGET_MAPPING_FIELDS_BLOGTITLE).Text
+                        },
+                        new ColumnProperty(nameof(BlogPostMappingModel.Published))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MODEL_FIELDS_PUBLISHED).Text,
+                        Width = "150",
+                        ClassName = NopColumnClassDefaults.CenterAll,
+                        Editable = true,
+                        EditType = EditType.Checkbox,
+                        Render = new RenderBoolean()
+                        },
+                        new ColumnProperty(nameof(BlogPostMappingModel.DisplayOrder))
+                        {
+                        Title = T(LocaleResourceDefaults.BLOG_WIDGET_MAPPING_FIELDS_DISPLAY_ORDER).Text,
+                        Width = "150",
+                        ClassName = NopColumnClassDefaults.CenterAll,
+                        Editable = true,
+                        EditType = EditType.Number
+                        },
+                        new ColumnProperty(nameof(BlogPostMappingModel.BlogId))
+                        {
+                        Title = T("Admin.Common.View").Text,
+                        Width = "150",
+                        ClassName = NopColumnClassDefaults.Button,
+                        Render = new RenderButtonView(new DataUrl("~/Admin/Blog/BlogPostEdit/", nameof(BlogPostMappingModel.BlogTitle)))
+                        },
+                        new ColumnProperty(nameof(BlogPostMappingModel.Id))
+                        {
+                        Title = T("Admin.Common.Edit").Text,
+                        Width = "200",
+                        ClassName =  NopColumnClassDefaults.Button,
+                        Render = new RenderButtonsInlineEdit()
+                        },
+                        new ColumnProperty(nameof(BlogPostMappingModel.Id))
+                        {
+                            Title = T("Admin.Common.Delete").Text,
+                            Width = "100",
+                            Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
+                            ClassName = NopColumnClassDefaults.Button
+                        }
+                   }
+               })
+            </div>
+            <div class="card-footer">
+                <button type="submit" id="btnAddNewBlog" onclick="javascript:OpenWindow('@(Url.Action("BlogAddPopup", "NopAdvanceEnhancedNopBlogs", new {blogWidgetId = Model.Id, btnId = "btnRefreshBlogs", formId = "blog-widget-form"}))', 800, 800, true); return false;" class="btn btn-primary">
+                    @T(LocaleResourceDefaults.BLOG_WIDGET_BLOGWIDGET_MAPPIN_ADD)
+                </button>
+                <input type="submit" id="btnRefreshBlogs" style="display: none" />
+                <script>
+                    $(document).ready(function () {
+                        $('#btnRefreshBlogs').click(function () {
+                            //refresh grid
+                            updateTable('#blogs-mapping-grid');
+
+                            //return false to don't reload a page
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card card-default">
+            <div class="card-body">
+                @T(LocaleResourceDefaults.BLOG_WIDGET_MAPPING_MESSAGE)
+            </div>
+        </div>
+    }
+</div>
